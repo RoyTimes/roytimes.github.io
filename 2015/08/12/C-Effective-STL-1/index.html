@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>C++ Effective STL(1) | ZS | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近读了一本在斯坦福图书馆借的书，叫做Effective STL。觉得这个书太牛逼了，于是就像写一写笔记什么的记录一下。这本书基本上从最根源的地方刨析了STL的各个方面。书本身是英文的，很多地方我并不知道中文叫做什么，书也是2001年的，很多C++的新特性还是没有加入。然而总之大体意思还是差不多的。我一点一点说起好了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Effective STL(1)">
+<meta property="og:url" content="http://ziorix.com/2015/08/12/C-Effective-STL-1/index.html">
+<meta property="og:site_name" content="ZS | Blog">
+<meta property="og:description" content="最近读了一本在斯坦福图书馆借的书，叫做Effective STL。觉得这个书太牛逼了，于是就像写一写笔记什么的记录一下。这本书基本上从最根源的地方刨析了STL的各个方面。书本身是英文的，很多地方我并不知道中文叫做什么，书也是2001年的，很多C++的新特性还是没有加入。然而总之大体意思还是差不多的。我一点一点说起好了。">
+<meta property="og:updated_time" content="2015-09-08T13:25:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++ Effective STL(1)">
+<meta name="twitter:description" content="最近读了一本在斯坦福图书馆借的书，叫做Effective STL。觉得这个书太牛逼了，于是就像写一写笔记什么的记录一下。这本书基本上从最根源的地方刨析了STL的各个方面。书本身是英文的，很多地方我并不知道中文叫做什么，书也是2001年的，很多C++的新特性还是没有加入。然而总之大体意思还是差不多的。我一点一点说起好了。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://i1.tietuku.com/fe235103b0e02240.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Song Zhou</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Things keep changing - Infite Loop</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/关于ZS">About Me</a></li>
+				        
+							<li><a href="/功能log">Change Logs</a></li>
+				        
+							<li><a href="/tags">Tags</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/RoyTimes" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/教程/" style="font-size: 15px;">教程</a> <a href="/tags/比赛笔记/" style="font-size: 10px;">比赛笔记</a> <a href="/tags/随便写/" style="font-size: 20px;">随便写</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Song Zhou</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://i1.tietuku.com/fe235103b0e02240.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Song Zhou</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Things keep changing - Infite Loop</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/关于ZS">About Me</a></li>
+		        
+					<li><a href="/功能log">Change Logs</a></li>
+		        
+					<li><a href="/tags">Tags</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/RoyTimes" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-C-Effective-STL-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/12/C-Effective-STL-1/" class="article-date">
+  	<time datetime="2015-08-11T20:21:18.000Z" itemprop="datePublished">2015-08-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++ Effective STL(1)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/C-C/">C/C++</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近读了一本在斯坦福图书馆借的书，叫做Effective STL。觉得这个书太牛逼了，于是就像写一写笔记什么的记录一下。这本书基本上从最根源的地方刨析了STL的各个方面。书本身是英文的，很多地方我并不知道中文叫做什么，书也是2001年的，很多C++的新特性还是没有加入。然而总之大体意思还是差不多的。我一点一点说起好了。</p>
+<a id="more"></a>
+<h4 id="u5BB9_u5668_Container"><a href="#u5BB9_u5668_Container" class="headerlink" title="容器 Container"></a>容器 <em>Container</em></h4><p>C++ 的STL标准库是一个以容器为基础编写的东西。其中有几个是基类，包括deque, vector, list。选择合适的容器就是编写高性能采用STL代码的第一步。</p>
+<blockquote>
+<p>Deque 这是双端队列，提供 <em>Random Access Iterator</em> ，但是一般来说提供前后两端的访问速度很快。</p>
+<p>List 是链表，当需要频繁删除数据的时候效率是O(1)</p>
+<p>vector 是动态数组容器，提供类似与C风格的数组访问方法。大概是最常用的一种容器的类型了。</p>
+</blockquote>
+<p>总体而言所有容器都是从这几个基类派生出来的。然而其他的总体分为两类，关联性容器和sequence containers. </p>
+<blockquote>
+<p>关联性容器很多都是Tree-based的容器，每个元素类似于节点。代表性的包括map，这一类的属于标准容器。</p>
+<p>另外一种容器就像是string，vector，queue一类的。不采用树形结构的。</p>
+</blockquote>
+<p>根据每种容器不同的特性选择合适的容器会让STL运行的效率提升的飞快。个人感觉大概就是这个部分会让算法的复杂度降低，其他的方式大部分都是集中在如何让算法的常数降低。</p>
+<h4 id="u51CF_u5C11_Copying"><a href="#u51CF_u5C11_Copying" class="headerlink" title="减少 Copying"></a>减少 <em>Copying</em></h4><p>STL因为安全性考虑，会执行一大堆的Copying的操作，大概这个就是可能影响STL效率的主要因素吧。所以为了提升STL的效率的话最基本的思路就是减少会使得程序过度Copying的流程。然而其实本身STL设计上其实是尽可能减少不必要的 <em>Copying</em> 操作的，所以说能提高效率的方法也不是很多。可能根据情况而定。举例说明一个 <em>vector</em> 的例子好了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ClassObject arr[maxNumber]; <span class="comment">//这是C语言风格的数组</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span> &lt;ClassObject&gt; arr; <span class="comment">//注意这里并不会调用Constractor</span></span><br><span class="line">arr.reserve (maxNumber); <span class="comment">//reserve是一个神奇的函数</span></span><br></pre></td></tr></table></figure>
+<h4 id="u4F7F_u7528_-empty_28__29__u4EE3_u66FF_-size_28__29__3D_3D_0"><a href="#u4F7F_u7528_-empty_28__29__u4EE3_u66FF_-size_28__29__3D_3D_0" class="headerlink" title="使用 .empty( ) 代替 .size( ) == 0"></a>使用 <em>.empty( )</em> 代替 <em>.size( ) == 0</em></h4><p>这个大概是最有意思的一条了，首先大多数STL的实现上都是empty函数都是采用一个inline属性之后返回是否size是0，这样说来假如说编译器没有添加inline的优化的话会反倒会使得empty函数的效率降低。那么到底是为什么呢。这一切都是因为 <em>list</em> 的一个特殊的操作。换句话说其实只要在使用链表的代码中注意一下这个事情就好了，其他的都无所谓，然而其实这么说还不如都这么用了。省事233. 这个特殊的操作叫做splice。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> &lt;<span class="keyword">int</span>&gt; l1;</span><br><span class="line"><span class="built_in">list</span> &lt;<span class="keyword">int</span>&gt; l2;</span><br><span class="line"></span><br><span class="line">list1.splice (</span><br><span class="line">	list1.end(), list2,</span><br><span class="line">	find (list2.begin()), list2.end(), <span class="number">5</span>),</span><br><span class="line">	find (list2.rbegin(), list2.rend(), <span class="number">10</span>).base()</span><br><span class="line">); <span class="comment">//诸君请看这一段代码，这就是罪恶之源。splice函数</span></span><br><span class="line"><span class="comment">//这段代码会把list1之中第一段5开头10结尾的数据复制到list2之中</span></span><br></pre></td></tr></table></figure>
+<p>假如说程序员想要让这段代码 <em>O( 1 )</em> 的话代价就是 <em>.size( )</em> 要通过 <em>O( n )</em> 实现。否则也可以反过来，总之必须有一个函数是 <em>O ( n )</em> 有一个函数是 <em>O( 1 )</em> 大部分程序员会为了这个特殊的函数采用常数时间实现而自豪，所以说很多时候都会让 <em>list</em> 的 <em>.size( )</em> 函数线性时间实现，这就导致了这样的时候 <em>.size( ) == 0</em> 变成了线性时间了。所以这时候就改采用 <em>.empty( )</em> 来优化到常数级别。</p>
+<h4 id="u4F7F_u7528_Range__u4EE3_u66FF_Single-Element__u7684_Operation"><a href="#u4F7F_u7528_Range__u4EE3_u66FF_Single-Element__u7684_Operation" class="headerlink" title="使用 Range 代替 Single-Element 的 Operation"></a>使用 <em>Range</em> 代替 <em>Single-Element</em> 的 <em>Operation</em></h4><p>这个部分效率的区分很明显 <em>Single-Element</em> 的操作很多时候多会使得程序运行过多的 <em>Copying</em> 操作，所以说用 <em>Range</em> 永远更好，而且是的代码更简单，在没有 C++11的 <em>auto</em> 迭代器的代码简直没法看。这个部分我就简单举几个例子说明一下好了。先说 <em>vector</em> 的</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">vector &lt;ClassObject&gt; v1;</span><br><span class="line">vector &lt;ClassObject&gt; v2;</span><br><span class="line"></span><br><span class="line">//现在要求把v1变成v2的后半部分</span><br><span class="line">v1.assign (v2.begin() + v2.size(), v2.end()); //正确的打开方法</span><br><span class="line"></span><br><span class="line">v1.clear();</span><br><span class="line">for (auto it = v2.begin() + v2.size() / 2; </span><br><span class="line">	it != v2.end();  ++ it)</span><br><span class="line">	v1.push_back (* it);</span><br><span class="line">// 错误的打开方法。</span><br><span class="line"></span><br><span class="line">ClassObject data[numVal];</span><br><span class="line">vector &lt;ClassObject&gt; v;</span><br><span class="line">// 将data插♂入到v中</span><br><span class="line"></span><br><span class="line">v.insert (v.begin(), data, data + numVal); //正确的打开方法</span><br><span class="line"></span><br><span class="line">vector &lt;ClassObject&gt;::iterator insertLoc (v.begin());</span><br><span class="line">for (int i = 0; i &lt; numVal; ++ i, ++ insertLoc)</span><br><span class="line">	insertLoc = v.inseert (insertLoc, data[i]);</span><br><span class="line">// 错误的打开方法</span><br></pre></td></tr></table></figure>
+<p>关于链表的操作的时候如果使用 <em>Single-Element</em> 操作的话就不是常数的问题了，因为每次插入新的元素的时候前后节点的指针会发生变化，虽然说指针更新操作很便宜，但是为什么还是要做这么多如此煞笔的操作呢。赶紧跟我默念三声 <em>Range</em> 操作大法好。</p>
+<h4 id="u5176_u4ED6_u4E00_u4E9B_u96F6_u6563Tip_u5411"><a href="#u5176_u4ED6_u4E00_u4E9B_u96F6_u6563Tip_u5411" class="headerlink" title="其他一些零散Tip向"></a>其他一些零散Tip向</h4><ol>
+<li>有时候使用 <em>vector <char></char></em> 代替 <em>string</em> 会起到很好的效果。</li>
+<li>切记切记，销毁 <em>container</em> 含有指针的时候千万要释放指针，否则会导致内存溢出</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/14/关于几个Linux的特殊发行版/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          关于几个Linux的特殊发行版
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/11/使用GitHub和Hexo搭建静态网页博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用GitHub和Hexo搭建静态网页博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Song Zhou All Fucking Rights Reserved
+    	</div>
+      	<div class="footer-right">
+      		take me to <a href="//ziorix.com">ziorix.com</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: false,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="totop"><img src="/img/scrollup.png" style="height:50px; width:50px;"/></a>
+</div>
+
+<script src="/js/totop.js" type="text/javascript"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>

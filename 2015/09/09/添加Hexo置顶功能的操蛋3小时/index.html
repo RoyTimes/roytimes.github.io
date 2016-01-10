@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>添加Hexo置顶功能的操蛋3小时 | ZS | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="大概好长时间之前我编辑了一下生成的脚本，之后产生了一个可以生成置顶post的功能，但是当初没有看到的问题就是只会置顶每个Page上的文章，假如说我的文章特别多，之后首页上出现了两页文章。那么就出现问题了，因为置顶的是每页的，所以说假如说一篇置顶文章正常排列到了第二页，那么就出现了逗比的第二页置顶文章的情况。于是今晚我花了3个小时处理这个Bug。2333">
+<meta property="og:type" content="article">
+<meta property="og:title" content="添加Hexo置顶功能的操蛋3小时">
+<meta property="og:url" content="http://ziorix.com/2015/09/09/添加Hexo置顶功能的操蛋3小时/index.html">
+<meta property="og:site_name" content="ZS | Blog">
+<meta property="og:description" content="大概好长时间之前我编辑了一下生成的脚本，之后产生了一个可以生成置顶post的功能，但是当初没有看到的问题就是只会置顶每个Page上的文章，假如说我的文章特别多，之后首页上出现了两页文章。那么就出现问题了，因为置顶的是每页的，所以说假如说一篇置顶文章正常排列到了第二页，那么就出现了逗比的第二页置顶文章的情况。于是今晚我花了3个小时处理这个Bug。2333">
+<meta property="og:updated_time" content="2015-09-08T17:12:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="添加Hexo置顶功能的操蛋3小时">
+<meta name="twitter:description" content="大概好长时间之前我编辑了一下生成的脚本，之后产生了一个可以生成置顶post的功能，但是当初没有看到的问题就是只会置顶每个Page上的文章，假如说我的文章特别多，之后首页上出现了两页文章。那么就出现问题了，因为置顶的是每页的，所以说假如说一篇置顶文章正常排列到了第二页，那么就出现了逗比的第二页置顶文章的情况。于是今晚我花了3个小时处理这个Bug。2333">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://i1.tietuku.com/fe235103b0e02240.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Song Zhou</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Things keep changing - Infite Loop</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/关于ZS">About Me</a></li>
+				        
+							<li><a href="/功能log">Change Logs</a></li>
+				        
+							<li><a href="/tags">Tags</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/RoyTimes" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/教程/" style="font-size: 15px;">教程</a> <a href="/tags/比赛笔记/" style="font-size: 10px;">比赛笔记</a> <a href="/tags/随便写/" style="font-size: 20px;">随便写</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Song Zhou</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://i1.tietuku.com/fe235103b0e02240.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Song Zhou</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Things keep changing - Infite Loop</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/关于ZS">About Me</a></li>
+		        
+					<li><a href="/功能log">Change Logs</a></li>
+		        
+					<li><a href="/tags">Tags</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/RoyTimes" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-添加Hexo置顶功能的操蛋3小时" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/09/添加Hexo置顶功能的操蛋3小时/" class="article-date">
+  	<time datetime="2015-09-08T16:12:50.000Z" itemprop="datePublished">2015-09-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      添加Hexo置顶功能的操蛋3小时
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/WebDev/">WebDev</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>大概好长时间之前我编辑了一下生成的脚本，之后产生了一个可以生成置顶post的功能，但是当初没有看到的问题就是只会置顶每个Page上的文章，假如说我的文章特别多，之后首页上出现了两页文章。那么就出现问题了，因为置顶的是每页的，所以说假如说一篇置顶文章正常排列到了第二页，那么就出现了逗比的第二页置顶文章的情况。于是今晚我花了3个小时处理这个Bug。2333</p>
+<a id="more"></a>
+<p>首先。确实是我水平不够，要不不可能处理这个破玩意处理这么长时间，其次其中的一换有JavaScript不稳定排序的锅，再其次，Hexo的文档写的太不好了，我整个人基本看了一般的整个项目的源码，非常操蛋。幸亏是JavaScript的，要是Ruby我早放弃了。</p>
+<h2 id="u7B2C_u4E00_u6B65_uFF0C_u539F_u59CB_u9519_u8BEF_u7684_u4EA7_u751F"><a href="#u7B2C_u4E00_u6B65_uFF0C_u539F_u59CB_u9519_u8BEF_u7684_u4EA7_u751F" class="headerlink" title="第一步，原始错误的产生"></a>第一步，原始错误的产生</h2><p>我打算在文章之中，通过一个叫做top的属性决定文章置顶不，观察主题文件源码之后，发现生成 <em>index</em> 的部分是在 <em>_patial/archive.ejs</em> 这文件之中，原来的文件之中有这样的几行代码。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">%</span> <span class="attribute">page.posts.each</span>(<span class="attribute">function</span>(<span class="attribute">post</span>)&#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">%-</span> <span class="attribute">partial</span>(‘<span class="attribute">article</span>’, &#123;<span class="attribute">post:</span> <span class="attribute">post</span>, <span class="attribute">index:</span> <span class="attribute">true</span>&#125;) %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">%</span> &#125;) %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我断定就是这几行代码负责产生文章列表，之后很显然posts作为一个array包含了所有的post，之后一个一个输出就好了，于是解决方案实在是简单，只要在这段代码之前提前判断一下是否为 <em>top</em>, 假如是之后就提前调用 <em>partial/article</em>，之后正常再扫描一遍之后只输出 <em>top</em> 为<span style="color: red;">false</span>的不就完成了。假如说文章少的话确实发现不来问题，于是我就以为这样是正确的很开心地用了很久，直到有一天文章变多了，之后发现出现了煞笔奇葩的情况。非常地惨。</p>
+<h2 id="u7B2C_u4E8C_u6B65_u9519_u8BEF"><a href="#u7B2C_u4E8C_u6B65_u9519_u8BEF" class="headerlink" title="第二步错误"></a>第二步错误</h2><p>第二层错误其实就到了比较纠结的地方了，我今天最开始的思路很简单，只要把全局排个序就好了吗，于是阅读官方文档之后知道了一个叫做 <em>site.posts</em> 的变量，这吊玩意直接模仿之前的跑了一遍之后问题就出现了，因为之前是没加载一页就会调用一下上面的那一段代码，于是假如说只是这样处理的话每一页都会重复加载这一堆置顶post。这是我之前就知道的，于是当时我想的就是只要加上一个notdisplay的东西，第一次显示过了就标记起来就好了啊，然而还是煞笔了，因为这个数据是一直保存在浏览器里的，也就是说我第一次刷进去网站是正常的，跳到第二页也没有加载出来那一堆不该出来的东西，但是返回第一页的时候置顶文件又没了。这让我非常地悲伤，最后甚至打算算一下置顶文件有多少之后直接分开单独判断在前几页的范围内，之后就煞笔了，我根本不能建立单独的变量，而且重新加载的话这个变量也没了。所以说现在的状态就是这个网页访问了第一页看起来是正常的，但是跳到了别的页之后置顶post就会迷之消失。于是我就进入了下一步处理这个Bug。</p>
+<h2 id="u7B2C_u4E09_u6B65"><a href="#u7B2C_u4E09_u6B65" class="headerlink" title="第三步"></a>第三步</h2><p>这个时候我有点感觉我需要想一想这段代码调用的本质，从什么地方调用的，而且这几个变量到底都是什么鬼。于是我上♂了<a href="https://hexo.io" target="_blank" rel="external">hexo的官网</a>看了一下官方的Doc，之后发现，毛都没写。非常的不开心，于是现在只能靠我自己，因为现在hexo还算是比较小众，网上根本连个像样的教程都没有。更别说这种根源级别的优化更改了(大概也和我自己煞笔有一定关系233). 之后我找了半天主题文档里，没找到半个关于生成那个神秘的叫做 <em>page.posts</em> 的痕迹。非常地不开心，直接打开了hexo的源码开始在源码的JavaScript文档里找。之后在一个叫做 <em>hexo-generator-index</em> 的文件夹之中感觉似乎找到了我想要的东西，这个文件夹之中的 <em>lib/generator.js</em> 似乎就是生成 <em>Index.html</em> 文档的代码。我把原来代码的一部分贴过来。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> posts = locals.posts.sort(‘-date’);</span><br></pre></td></tr></table></figure></p>
+<p>就是这一行代码生成的这个神秘的叫做 <em>posts</em> 的全局变量，这个根据这段代码的context我推断应该是全局的所有post的意思。于是看这个按照着sort排序，我非常开心，直接改成了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> posts = locals.posts.sort(‘-date’);</span><br><span class="line">		posts = posts.sort(‘-top’);</span><br></pre></td></tr></table></figure></p>
+<p>看着似乎合情合理。这样的话就变成了先按照date排序之后再按照 <em>top</em> 排序就好了，而且更牛逼的是我可以改变 <em>top</em> 的值甚至决定一个post在置顶post之中的顺序，比如说一个超级重要的我可以设置成2，一般的置顶设置成1，不置顶设置成0这样。跑了一下也确实是这样的。我正为自己感到牛逼的时候，这时候…</p>
+<h2 id="Clear_All_the_Fucking_bugs"><a href="#Clear_All_the_Fucking_bugs" class="headerlink" title="Clear All the Fucking bugs"></a>Clear All the Fucking bugs</h2><p>这时候我突然发现有一个地方9月3号的一个日志排到了一个9月2号和8月20号的日志中间，再仔细一看，原来日期有点乱了。当时我真是感觉日了狗了。百度了一下才发现原来JavaScript是不稳定排序，于是造成了相同的 <em>top</em> 值的时候日期排序方法是有几率混乱的。假如说当时我没发现这个问题也就这么回事了，虽然是不稳定的，但是日期排序乱掉的几率太低，基本上可以理解为玄学。但是既然看到了就燃起了强迫症之魂。这东西太难过了，我得解决一下啊。百度了一下JS的sort使用方法，我终于是蒙逼了。原版JS要求sort传入一个CMP函数，但是这个TM的”-top”和”-date”是个什么鬼。我开始翻之前的代码，然而并没有一个地方提到这个奇怪的语法，网上更是找不到。我突然开始好奇，到底那个叫做 <em>posts</em> 的变量是个什么类型。 <em>console.log(typeof posts)</em> 之后果然这东西是一个奇葩玩意，TM的是一个Object。艹.. 这我当时就不乐意了，这TM是一个Hexo几万行，几百个文件某一个地方重载的一个排序method。没办法，我开始了漫长的探索这个东西到底咋排序的路上，首先我得弄清到底这个Object的存储规则是什么。注意上一段代码中那个更神秘的 <em>locals</em> 变量，是这个函数传进来的参数，具体在哪里进来的未知，更别提给这吊玩意做操作。大概中间有了半个小时的过程，我一直用 <em>hexo g &gt; data.out</em> 加上<em>console.log()</em> 这样的方法试图找出到底posts这里面有啥。至于为什么要pipe到文件，因为第一次直接打印 <em>posts</em> 的时候文件输出了3个MB。Sublime Text都卡了一下，Atom直接卡死了。当时终端卡的我菊花一紧，于是就pipe到了文件了。之后发现了，这玩意好TM复杂，乱七八糟一大堆东西。我把我原来的post都删掉了，放上了两个placeholder之后的等各种斗智斗勇之后前后一个小时终于摸清，这玩意下面的一个叫做 <em>posts.data</em> 是一个存储所有post的Array，之后每个元素包含一个post的所有属性，包含 <em>title</em> 啊， <em>top</em> 等这些，还有一个 <em>date</em> 这吊玩意直接TM是一个Object, 打印出来是一堆乱七八糟的东西。但是终归还是找到了是吧。马上上了代码。这次整个 <em>generator.js</em> 的代码是这样的:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">‘use strict’;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> pagination = <span class="built_in">require</span>(‘hero-pagination’);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cop</span> (<span class="params">b, a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.top === <span class="number">0</span> &amp;&amp; b.top === <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> a.date - b.date;</span><br><span class="line">    <span class="keyword">return</span> a.top - b.top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">locals</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = <span class="keyword">this</span>.config;</span><br><span class="line">  <span class="keyword">var</span> posts = locals.posts.sort(‘-date’);</span><br><span class="line">    posts.data = posts.data.sort(cop);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> paginationDir = config.pagination_dir || ‘page’;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> pagination(‘’, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [‘index’, ‘archive’],</span><br><span class="line">    format: paginationDir + ‘/%d/‘,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>还算良心， <em>date</em> 的对象直接就是带了减号重载的。否则这就真无解了。</p>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2><p>总之现在博客的置顶功能运行的正常了，而且支持分优先级置顶了。写完这一大堆代码，之后感觉自己心好特码累。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/13/目前状态更新/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          目前状态更新
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/06/并行程序设计导论-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">并行程序设计导论(1)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Song Zhou All Fucking Rights Reserved
+    	</div>
+      	<div class="footer-right">
+      		take me to <a href="//ziorix.com">ziorix.com</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: false,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="totop"><img src="/img/scrollup.png" style="height:50px; width:50px;"/></a>
+</div>
+
+<script src="/js/totop.js" type="text/javascript"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>并行程序设计导论(1) | ZS | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近回到了天朝之后在国际化大农村长春这边明显感觉到了资源的不足，觉得我该继续读一点书，于是今天下午去了传说中的长春市图书馆去借了一点书。真是我和资本主义的图书管理差了好几个等级。图书大概就在那一个区域，但是我研究了半天也没研究明白到底是什么方式排列书的。而且书都是中文的，不是说我能读英文我装逼我自豪，是因为中文很多书翻译的简直比英语更难懂。首先读的第一本书就如题。是一本C++多线程的书。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="并行程序设计导论(1)">
+<meta property="og:url" content="http://ziorix.com/2015/09/06/并行程序设计导论-1/index.html">
+<meta property="og:site_name" content="ZS | Blog">
+<meta property="og:description" content="最近回到了天朝之后在国际化大农村长春这边明显感觉到了资源的不足，觉得我该继续读一点书，于是今天下午去了传说中的长春市图书馆去借了一点书。真是我和资本主义的图书管理差了好几个等级。图书大概就在那一个区域，但是我研究了半天也没研究明白到底是什么方式排列书的。而且书都是中文的，不是说我能读英文我装逼我自豪，是因为中文很多书翻译的简直比英语更难懂。首先读的第一本书就如题。是一本C++多线程的书。">
+<meta property="og:updated_time" content="2015-09-08T13:26:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="并行程序设计导论(1)">
+<meta name="twitter:description" content="最近回到了天朝之后在国际化大农村长春这边明显感觉到了资源的不足，觉得我该继续读一点书，于是今天下午去了传说中的长春市图书馆去借了一点书。真是我和资本主义的图书管理差了好几个等级。图书大概就在那一个区域，但是我研究了半天也没研究明白到底是什么方式排列书的。而且书都是中文的，不是说我能读英文我装逼我自豪，是因为中文很多书翻译的简直比英语更难懂。首先读的第一本书就如题。是一本C++多线程的书。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://i1.tietuku.com/fe235103b0e02240.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Song Zhou</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Things keep changing - Infite Loop</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/关于ZS">About Me</a></li>
+				        
+							<li><a href="/功能log">Change Logs</a></li>
+				        
+							<li><a href="/tags">Tags</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/RoyTimes" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/教程/" style="font-size: 15px;">教程</a> <a href="/tags/比赛笔记/" style="font-size: 10px;">比赛笔记</a> <a href="/tags/随便写/" style="font-size: 20px;">随便写</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Song Zhou</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://i1.tietuku.com/fe235103b0e02240.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Song Zhou</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Things keep changing - Infite Loop</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/关于ZS">About Me</a></li>
+		        
+					<li><a href="/功能log">Change Logs</a></li>
+		        
+					<li><a href="/tags">Tags</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/RoyTimes" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-并行程序设计导论-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/06/并行程序设计导论-1/" class="article-date">
+  	<time datetime="2015-09-06T11:46:21.000Z" itemprop="datePublished">2015-09-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      并行程序设计导论(1)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/C-C/">C/C++</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近回到了天朝之后在国际化大农村长春这边明显感觉到了资源的不足，觉得我该继续读一点书，于是今天下午去了传说中的长春市图书馆去借了一点书。真是我和资本主义的图书管理差了好几个等级。图书大概就在那一个区域，但是我研究了半天也没研究明白到底是什么方式排列书的。而且书都是中文的，不是说我能读英文我装逼我自豪，是因为中文很多书翻译的简直比英语更难懂。首先读的第一本书就如题。是一本C++多线程的书。</p>
+<a id="more"></a>
+<h2 id="Parallel__26amp_3B_Distributed__26amp_3B_Cocurrent"><a href="#Parallel__26amp_3B_Distributed__26amp_3B_Cocurrent" class="headerlink" title="Parallel &amp; Distributed &amp; Cocurrent"></a>Parallel &amp; Distributed &amp; Cocurrent</h2><p>好在作者有良心，这本书还是给出了英文原文的，这几个就是多线程运算的三个常用概念。Parallel就是程序独立就是在一个进程里跑独立的线程的意思最简单，也是我现在写过的一种，Distributed &amp; Cocurrent 都是一个进程下多个线程合作完成一个事情。区别是Distributed就是所谓的分布式是不共享内存的，而Cocurrent是多个处理单元但是会共享内存。这本书主要讲解Cocurrent. 之后简单介绍了冯诺依曼结构，大概就是指令和数据分开，所以这样的话就煞笔了啊。因为数据在内存中，调取非常的耗费时间。为此系统会自动设计这个东西，现在的系统都是多任务的系统即使实在单核的电脑上，原理就是可能一个任务运行一点之后假如说需要去那一些数据的话等待数据取回的时间再去做下一个运算，让CPU一直在工作。但是还是会造成因为取回数据造成的资源浪费。解决方案其实很简单，利用Cache. 这个很好理解，但是有一些要注意的东西。</p>
+<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><p>这是一个很神奇的发明，一般来说Cache分成三级，每一层速度更快，但是更小。就像一个金字塔的形状，之后CPU提取数据的时候会从上向下提取，因为Cache能不能起到作用基本上碰运气，可能有的缓存就是没有意义的，但是有的就有意义。如果正好有意义就被成为<strong>命中</strong>注意，这个假如说第一层没命中的话可能第二层命中(这你不废话。)。之后就是Cache的储存机制，这个东西写在硬件上，软件无法干涉。大体分为三类，一类是Full Associative， 一类是directed mapped，一类是n-way set associated. 简单说就是第一类就相当于一坨内存中的数据糊Cache一脸，乱七八糟的放进每一行，Directed Mapped就是一一对应的，比如说内存的行数取模一个Cache之中的行数，之后就映射过去，比如说取模4的时候，第0，4，8，12行对应Cache第一行，之后很显然最后一种就是两者的折衷方案，一行内存对应n行缓存。这里一个问题就是怎么覆盖之前的数据呢。Cache才用了一个计数机制，访问的最少的区域会被优先替代以提高数据提取的命中率。</p>
+<h2 id="u865A_u62DF_u50A8_u5B58_u5668"><a href="#u865A_u62DF_u50A8_u5B58_u5668" class="headerlink" title="虚拟储存器"></a>虚拟储存器</h2><p>我不知道是翻译的问题还是什么，这本书之中出现了一个概念叫做主存。关于这个问题的讲解大概就是，主存有时候存不下大量的数据。于是有了虚拟的内存的概念。大概的原理就是，多个程序访问一块内存的时候可能真实的程序分片的时候访问同一个地址的时候会发生冲突，为了解决这个问题，于是产生了Swap Space的概念，之后数据变成了块，类似于一万个虚拟机，每个进程访问自己的内存虚拟机，这些虚拟机被称之为Page. 所以定义内存的地址的时候使用虚拟Page+Page内的Offset来实现。但是个人觉得这个设计神煞笔，但是其实没有什么办法，因为取一个内存地址都要做一万个运算，基本上是直接访问速度的一万倍以上，之后更奇葩的是这样的话必须需要一块CPU边上的缓存用于翻译，叫做Translation-Lookaside Buffer. 专门用于翻译这个奇葩的真假内存的东西。所以说从硬件原理上来说，真爱生命远离Swap Space. 那些说电脑虚拟内存越大的越好的煞笔，请你们邹凯。</p>
+<h2 id="u51E0_u4E2A_u57FA_u672C_u7684Parallelism"><a href="#u51E0_u4E2A_u57FA_u672C_u7684Parallelism" class="headerlink" title="几个基本的Parallelism"></a>几个基本的Parallelism</h2><ul>
+<li>Instruction-Level Parallelism (ILP) 是让处理器同时执行指令提高性能(废话。)一般有着流水线式操作和多发射两种操作方法，流水线就相当于一条流水线上第一个处理乘法，第二个是加法，第三个是乘方，之后可以想象后面的数据推着之前的数据这样。一次并发执行很多操作，第二种稍微复杂一点，主要是编译的时候产生，我大概需要一个具体事例说明。 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//样例1</span></span><br><span class="line">z = x + y;</span><br><span class="line"><span class="keyword">if</span> (z &gt; <span class="number">0</span>) w = x;</span><br><span class="line"><span class="keyword">else</span> w = y</span><br><span class="line"></span><br><span class="line"><span class="comment">//样例2</span></span><br><span class="line">z = x + y;</span><br><span class="line">w = * ptr;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于第一个，编译器预测大多数结果是进入w = x的分支，第二个所以直接把x + y拷贝并行的拷贝过去，这样就同时地进行了两个运算。第二个假如说ptr一般不指向z，那么直接并行操作赋值和加法。假如说预测错误，那么显然需要重新执行这个过程，好的编译器预测成功率很高，优化效率也就会显著提升。<br><br></p>
+<ul>
+<li><p>Thread Level Parallelism(TLP) - 这一种会让线程之间直接并列运行，相比ILP更粗略。并不是基本的指令单元的并行。属于一种Coarse-grained的并行方法。</p>
+</li>
+<li><p>Hardware Multithreading 这种之前大概说过，类似于CPU处理任务时候的分片机制，假如说一个任务需要从内存之中读取数据，那么下一个任务先执行来节约运算资源。注意，有的机器煞笔一样把每个Thread实现成了一个进程，进程切换是龟速的，大概是Threads切换的1000倍以上。</p>
+</li>
+<li><p>Simultaneous Multithreading (SMT) 允许Fine-grained的线程变种，他通过允许多个线程同时使用多个功能单元来利用计算资源。注意我们可以设定优先级线程，能减少线程减速的问题。</p>
+</li>
+</ul>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2><p>今天先讲一点最基础的，明天再继续讲解下一部分，大概是Distributed系统的CPU和内存协调的理论方法。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/09/添加Hexo置顶功能的操蛋3小时/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          添加Hexo置顶功能的操蛋3小时
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/03/简单讲解各种个样的服务器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">简单讲解各种各样的服务器</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Song Zhou All Fucking Rights Reserved
+    	</div>
+      	<div class="footer-right">
+      		take me to <a href="//ziorix.com">ziorix.com</a>
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: false,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+<a title="totop"><img src="/img/scrollup.png" style="height:50px; width:50px;"/></a>
+</div>
+
+<script src="/js/totop.js" type="text/javascript"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
