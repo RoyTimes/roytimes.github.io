@@ -4,17 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Category: 系统 | ZS | Blog</title>
+  <title>Digging into React.js(0) | ZS | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zs ziorix blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZS | Blog">
-<meta property="og:url" content="http://ziorix.com/categories/系统/index.html">
+  <meta name="description" content="The first post about React.js &amp;amp; related Web studying journal.&amp;lt;!– more – &amp;gt;
+Since, recently, a few guys from US started telling me that I should really make my Blog English-based. Since most o">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Digging into React.js(0)">
+<meta property="og:url" content="http://ziorix.com/2016/01/18/Digging into React.js(0)/index.html">
 <meta property="og:site_name" content="ZS | Blog">
-<meta property="og:description" content="zs ziorix blog">
+<meta property="og:description" content="The first post about React.js &amp;amp; related Web studying journal.&amp;lt;!– more – &amp;gt;
+Since, recently, a few guys from US started telling me that I should really make my Blog English-based. Since most o">
+<meta property="og:updated_time" content="2016-01-17T19:19:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZS | Blog">
-<meta name="twitter:description" content="zs ziorix blog">
+<meta name="twitter:title" content="Digging into React.js(0)">
+<meta name="twitter:description" content="The first post about React.js &amp;amp; related Web studying journal.&amp;lt;!– more – &amp;gt;
+Since, recently, a few guys from US started telling me that I should really make my Blog English-based. Since most o">
   
   
     <link rel="icon" href="/favicon.png">
@@ -169,58 +173,86 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Digging into React.js(0)" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/08/14/关于几个Linux的特殊发行版/" class="archive-article-date">
-  	<time datetime="2015-08-14T08:13:03.000Z" itemprop="datePublished">Aug 14</time>
+    <div class="article-meta">
+      <a href="/2016/01/18/Digging into React.js(0)/" class="article-date">
+  	<time datetime="2016-01-17T18:48:18.000Z" itemprop="datePublished">2016-01-18</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/14/关于几个Linux的特殊发行版/">关于几个Linux的特殊发行版</a>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Digging into React.js(0)
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随便写/">随便写</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-js-Web/">React.js Web</a></li></ul>
 	</div>
 
-          
+        
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/系统/">系统</a>
+	<a class="article-category-link" href="/categories/React-js/">React.js</a>
 	</div>
 
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The first post about <code>React.js</code> &amp; related Web studying journal.<br>&lt;!– more – &gt;</p>
+<p>Since, recently, a few guys from US started telling me that I should really make my Blog English-based. Since most of the readers are actually pretty well English reader and shit tons of English Docs about everything but rarely too much Chinese Docs. Well, English then. I am actually a terrible English speaker. So, I would try to make these posts at least understandable for both Chinese and English speakers. </p>
+<p>Well, brief into about <code>React.js</code>. It’s a really fancy front-end framework published by Facebook(TM) @ 2015. Well, in fact, it’s not actually well-qualified to be called a framework. Unlike these mature MVC front-end framework. <code>React.js</code> is only the View Layer. The most striking feature of it for me is its really unique measurement of updating the <code>DOM</code>. As we all know, updating <code>DOM</code> is like a really slow process for the browser, especially if the webpage is like a huge huge form for user to submit. Changing a single node in the <code>DOM</code> Tree is almost do the rendering again completely, which is slow and creates really terrible user experience. So, engineers from Facebook use something called <code>Virtual DOM</code> to tackle this problem. The <code>Virtual DOM</code> is stored in the memory and every change of the React comportment would only change the <code>DOM</code> in the memory. Later, a diff system would compare the <code>Virtual DOM</code> to the really one and would only re-render the parts changed. </p>
+<p>I am like super new to this new Tech. Due to the excessively lake of Chinese Doc, it’s really super hard to learn. I only know the basic usage. It may even take me months to master even a few mods of it. So, I am trying to keep record of what I learn for other people and for my future review. </p>
+<p>I would use <code>JSX</code> and <code>ES6</code> syntax to write code. <code>Webpack</code> to pack resource up. Try to use <code>Mocha</code> to running test(never use it before lolololol). <code>Node-inspector</code> to debug(never use it before lololol). Using <code>React Router</code> as the router system. Use <code>Nodejs Express</code> as the testing server-side. <code>MongoDB</code> or even try <code>Redis</code> as the database. Possibly using <a href="http://material-ui.com" target="_blank" rel="external">Material-UI</a> or <code>Bootstrap</code> in <code>React.js</code>.</p>
+<p>The whole learning process would be me trying to build a whole system of a API server for the service of all of my current webpage and a front-end-only static single page Blog system. First, I hope I could basically wrap up the building of the blog system in two weeks. So, lets begin work tonight!</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/18/Digging-into-React-js-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Digging into React.js(1)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/16/迷-I-want-to-belive/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">迷 - I want to belive</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
 
 
 </div>
@@ -246,10 +278,10 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true
 	}
 </script>
