@@ -39,7 +39,7 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'./assets/login/js/bg.jpg': 'center'
+							'./assets/login/js/bg.png': 'center'
 						},
 
 					// Delay.
@@ -63,6 +63,8 @@
 						$bg = document.createElement('div');
 							$bg.style.backgroundImage = 'url("' + k + '")';
 							$bg.style.backgroundPosition = settings.images[k];
+							// $bg.style.width = "100%";
+							// $bg.style.height = "100%";
 							$wrapper.appendChild($bg);
 
 					// Add it to array.
