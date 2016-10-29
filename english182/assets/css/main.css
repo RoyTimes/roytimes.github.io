@@ -11,9 +11,9 @@
 @font-face {
     font-family: 'CIRCLED';
     src: url('fonts/CIRCLE.eot');
-    src: local('☺'), 
-    url('../fonts/CIRCLE.woff') format('woff'), 
-    url('../fonts/CIRCLE.ttf') format('truetype'), 
+    src: local('☺'),
+    url('../fonts/CIRCLE.woff') format('woff'),
+    url('../fonts/CIRCLE.ttf') format('truetype'),
     url('../fonts/CIRCLE.svg') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -21,9 +21,9 @@
 @font-face {
     font-family: 'StructrRe';
     src: url('fonts/Structr Regular.eot');
-    src: local('☺'), 
-    url('../fonts/Structr Regular.woff') format('woff'), 
-    url('../fonts/Structr Regular.ttf') format('truetype'), 
+    src: local('☺'),
+    url('../fonts/Structr Regular.woff') format('woff'),
+    url('../fonts/Structr Regular.ttf') format('truetype'),
     url('../fonts/Structr Regular.svg') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -31,9 +31,9 @@
 @font-face {
     font-family: 'StructrMe';
     src: url('fonts/Structr Medium.eot');
-    src: local('☺'), 
-    url('../fonts/Structr Medium.woff') format('woff'), 
-    url('../fonts/Structr Medium.ttf') format('truetype'), 
+    src: local('☺'),
+    url('../fonts/Structr Medium.woff') format('woff'),
+    url('../fonts/Structr Medium.ttf') format('truetype'),
     url('../fonts/Structr Medium.svg') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -41,9 +41,9 @@
 @font-face {
     font-family: 'StructrBo';
     src: url('fonts/Structr Bold.eot');
-    src: local('☺'), 
-    url('../fonts/Structr Bold.woff') format('woff'), 
-    url('../fonts/Structr Bold.ttf') format('truetype'), 
+    src: local('☺'),
+    url('../fonts/Structr Bold.woff') format('woff'),
+    url('../fonts/Structr Bold.ttf') format('truetype'),
     url('../fonts/Structr Bold.svg') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -228,7 +228,7 @@
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #5d6e76 url("images/bg.jpg") bottom left;
+		background: #FFF url("images/bg.png");
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;

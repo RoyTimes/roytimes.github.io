@@ -56,10 +56,23 @@
             }
 
             #but {
-                background-color: rgba(102, 102, 102, 0.7);
+                background-color: rgba(102, 102, 102, 0.9);
                 margin-top: 30px;
                 font-size: 23pt;
             }
+
+            #audience {
+                background-color: #F9A825;
+                margin-top: 30px;
+                font-size: 23pt;
+            }
+
+            #participant {
+                background-color: #4A148C;
+                margin-top: 30px;
+                font-size: 23pt;
+            }
+
             </style>
             <div class="jumbotron" id="header">
                 <h1 style="font-size:520%;font-family: StructrRe;">Renaissance Hack</h1>
@@ -67,17 +80,18 @@
                 <p style="font-size:150%;font-family:YueHei;">*&nbsp;Now ready for registration&nbsp;*</p>
                 <p>
                     <div class="btn-group" role="group" aria-label="...">
-                         <a class="btn btn-primary btn-lg" id="but" onclick="jump2();" role="button">Explore More</a>
+                         <a class="btn btn-primary btn-lg" id="participant" onclick="jump2();" role="button">Participant</a>
+                         <a class="btn btn-primary btn-lg" id="audience" onclick="jump3();" role="button">&nbsp;Audience&nbsp;&nbsp;</a>
                     </div>
-                    <br> <a class="btn btn-primary btn-lg" id="but" onclick="jump3();" role="button">&nbsp;Enroll&nbsp;</a>
+                    <br> <a class="btn btn-primary btn-lg" id="but" onclick="" role="button">&nbsp;Enroll&nbsp;</a>
 
                 </p>
 
                 <script type="text/javascript">
                 function jump2 () {
-                    window.location.href='main.html';
+                    window.location.href='main_p.html';
                 }function jump3 () {
-                    window.location.href='enroll.html';
+                    window.location.href='main_a.html';
                 }
                 </script>
 
@@ -99,11 +113,8 @@
     }
     </script>
     <script src="assets/js/jquery-1.11.1.js"></script>
-    <!-- REQUIRED BOOTSTRAP SCRIPTS -->
     <script src="assets/js/bootstrap.js"></script>
-    <!-- SCROLLING SCRIPTS PLUGIN  -->
     <script src="assets/js/jquery.easing.min.js"></script>
-    <!-- CUSTOM SCRIPTS   -->
 </body>
 
 </html>
